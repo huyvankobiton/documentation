@@ -6,6 +6,10 @@ pipeline {
   agent {
     label "nodejs-app-slave"
   }
+  
+   tools {
+    nodejs "Node 16.x"
+  }
 
   parameters {
     string(name: 'COMMIT_ID', defaultValue: '', description: "The git commit id to indicate the codebase for building. By default it's the environment GIT_COMMIT from Jenkins")
