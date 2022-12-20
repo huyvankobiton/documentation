@@ -14,6 +14,7 @@ pipeline {
   parameters {
     string(name: 'COMMIT_ID', defaultValue: '', description: "The git commit id to indicate the codebase for building. By default it's the environment GIT_COMMIT from Jenkins")
     booleanParam(name: 'BUILD', defaultValue: true, description: "Build and publish Docker image to AWS ECR.")
+    choice(name: 'APP_TO_DEPLOY', choices: ['All', 'documentation', 'portal-help'], description: 'Deploy selected app. By default, all apps are deployed')
     booleanParam(name: "DEPLOY_TO_KOBITON_TEST", defaultValue: false, description: "Deploy to Kobiton Test")
     booleanParam(name: "DEPLOY_TO_KOBITON_STAGING", defaultValue: false, description: "Deploy to Kobiton Staging")
     booleanParam(name: "DEPLOY_TO_KOBITON_PRODUCTION", defaultValue: false, description: "Deploy to Kobiton Production")
