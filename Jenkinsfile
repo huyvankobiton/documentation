@@ -26,7 +26,7 @@ pipeline {
 
   environment {
     CI_DEPLOY_APP_NAME = "documentation"
-    CI_DOCKER_IMAGE_NAME = "documentation"
+    CI_DOCKER_IMAGE_NAME = "portal-help"
   }
 
   stages {
